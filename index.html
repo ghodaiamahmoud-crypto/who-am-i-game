@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مين أنا؟ | تحدي الكمبيوتر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+
+        <!-- شاشة البداية -->
+        <section id="home-screen" class="screen active">
+            <div class="logo">💻</div>
+            <h1>مين أنا؟</h1>
+            <p class="subtitle">تحدي الكمبيوتر والبرمجة</p>
+            <p>اختبر معلوماتك واكتشف عالم التكنولوجيا!</p>
+            <button class="main-btn" onclick="showLevels()">ابدأ المغامرة 🚀</button>
+        </section>
+
+        <!-- شاشة اختيار المستوى -->
+        <section id="levels-screen" class="screen">
+            <h2>اختر مستواك 🎯</h2>
+
+            <div class="levels-grid">
+                <button class="level-card" onclick="startGame(0)">
+                    <span>🖥️</span>
+                    <h3>مكونات الكمبيوتر</h3>
+                    <p>المستوى الأول</p>
+                </button>
+
+                <button class="level-card" onclick="startGame(1)">
+                    <span>📱</span>
+                    <h3>البرامج والتطبيقات</h3>
+                    <p>المستوى الثاني</p>
+                </button>
+
+                <button class="level-card" onclick="startGame(2)">
+                    <span>👨‍💻</span>
+                    <h3>لغات البرمجة</h3>
+                    <p>المستوى الثالث</p>
+                </button>
+
+                <button class="level-card" onclick="startGame(3)">
+                    <span>🌐</span>
+                    <h3>عالم التكنولوجيا</h3>
+                    <p>المستوى الرابع</p>
+                </button>
+            </div>
+
+            <button class="back-btn" onclick="goHome()">⬅ العودة</button>
+        </section>
+
+        <!-- شاشة اللعبة -->
+        <section id="game-screen" class="screen">
+            <div class="game-top">
+                <button class="back-btn" onclick="showLevels()">✕ خروج</button>
+                <div class="score-box">⭐ النقاط: <span id="score">0</span></div>
+            </div>
+
+            <div class="progress-info">
+                <span id="question-number">السؤال 1</span>
+                <span id="progress-text">1 / 5</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+            <div class="hint-box">
+                <h3>💡 التلميحات</h3>
+                <p id="hint-text"></p>
+                <button class="hint-btn" onclick="showHint()">كشف تلميح 🔍</button>
+            </div>
+
+            <div class="question-box">
+                <h2>مين أنا؟ 🤔</h2>
+                <p id="question-text"></p>
+            </div>
+
+            <div id="answers-container" class="answers-grid"></div>
+
+            <p id="feedback"></p>
+
+            <button id="next-btn" class="main-btn hidden" onclick="nextQuestion()">
+                السؤال التالي ➜
+            </button>
+        </section>
+
+        <!-- شاشة النتيجة -->
+        <section id="result-screen" class="screen">
+            <div class="result-icon">🏆</div>
+            <h1>انتهى التحدي!</h1>
+            <p id="result-message"></p>
+            <div class="final-score">
+                <span>نتيجتك</span>
+                <h2 id="final-score">0</h2>
+            </div>
+            <button class="main-btn" onclick="showLevels()">العب مرة أخرى 🔄</button>
+            <button class="back-btn" onclick="goHome()">الرئيسية 🏠</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
